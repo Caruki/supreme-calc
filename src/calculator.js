@@ -4,6 +4,7 @@ const calculatorOutput = document.querySelector(".calc-output");
 const calculatorInputs = document.querySelectorAll(".calc-input");
 const calculatorResult = document.querySelector(".calc-result");
 const calculatorClear = document.querySelector(".calc-clear");
+const calculatorOperators = document.querySelectorAll(".calc-operator");
 
 function add(numberOne, numberTwo) {
   return numberOne + numberTwo;
@@ -21,10 +22,11 @@ function divide(numberOne, numberTwo) {
   return numberOne / numberTwo;
 }
 
-const numberOne = Number(calculatorInputs[3].innerText);
-const numberTwo = Number(calculatorInputs[9].innerText);
+let numberOne = 0;
+let numberTwo = 0;
 
 function clickResult() {
+  numberTwo = Number(calculatorOutput.value);
   calculatorOutput.value = add(numberOne, numberTwo);
   console.log("clicked");
 }
@@ -39,10 +41,17 @@ calculatorClear.addEventListener("click", clickClear);
 
 function calculatorInputClick(calculatorInput) {
   calculatorInput.addEventListener("click", function() {
-    calculatorOutput.value = calculatorInput.innerText;
+    calculatorOutput.value += calculatorInput.innerText;
   });
 }
 
-// calculatorInputs.forEach(input => alert(input.innerText));
-
 calculatorInputs.forEach(calculatorInputClick);
+
+function calculatorOperatorClick(calculatorOperator) {
+  calculatorOperator.addEventListener("click", function() {
+    numberOne = Number(calculatorOutput.value);
+    clickClear();
+  });
+}
+
+calculatorOperators.forEach(calculatorOperatorClick);
