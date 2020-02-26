@@ -5,11 +5,12 @@
 }
 
 .btn {
-  background: azure;
+  background: rgb(182, 211, 211);
   cursor: pointer;
   outline: none;
+  font-size: 1rem;
 }
 
 .btn:hover {
-  background: cadetblue;
+  background: rgb(146, 177, 179);
 }
