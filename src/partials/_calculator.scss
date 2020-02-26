@@ -27,3 +27,9 @@
   background: rgb(50, 82, 50);
   color: white;
 }
+
+.calc-result {
+  flex-basis: calc(100% / 4);
+  background: rgb(101, 148, 101);
+  color: white;
+}
