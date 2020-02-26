@@ -1,12 +1,29 @@
 .calculator {
   display: flex;
   flex-wrap: wrap;
+  width: 300px;
+  height: 300px;
+  margin: auto;
 }
 
-.calculator__output {
-  flex-basis: 100%;
+.calc-output {
+  flex-basis: calc(100% / 4 * 3);
 }
 
-.calculator__input {
-  flex-basis: calc(100% / 3);
+.calc-input {
+  flex-basis: calc(100% / 4);
+  background: rgb(143, 71, 71);
+  color: white;
+}
+
+.calc-clear {
+  flex-basis: calc(100% / 4);
+  background: rgb(42, 68, 107);
+  color: white;
+}
+
+.calc-operator {
+  flex-basis: calc(100% / 4);
+  background: rgb(50, 82, 50);
+  color: white;
 }
