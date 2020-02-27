@@ -1,5 +1,5 @@
 "use strict";
-import { add, subtract, multiplicate, divide } from "./math.js";
+import { calculate } from "./math.js";
 
 const calculatorOutput = document.querySelector(".calc-output");
 const calculatorInputs = document.querySelectorAll(".calc-input");
@@ -13,17 +13,7 @@ let numberTwo = 0;
 
 function clickResult() {
   numberTwo = Number(calculatorOutput.value);
-  if (typeOperator === "+") {
-    calculatorOutput.value = add(numberOne, numberTwo);
-  } else if (typeOperator === "-") {
-    calculatorOutput.value = subtract(numberOne, numberTwo);
-  } else if (typeOperator === "*") {
-    calculatorOutput.value = multiplicate(numberOne, numberTwo);
-  } else if (typeOperator === "/") {
-    calculatorOutput.value = divide(numberOne, numberTwo);
-  } else {
-    console.log("Error");
-  }
+  calculatorOutput.value = calculate(numberOne, numberTwo, typeOperator);
 }
 
 function clickClear() {
